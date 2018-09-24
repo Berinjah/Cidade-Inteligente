@@ -61,3 +61,17 @@ E:\DS II\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.for
 E:\DS II\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.Properties.Resources.resources
 E:\DS II\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.csproj.GenerateResource.Cache
 E:\DS II\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.csprojResolveAssemblyReference.cache
+H:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.exe
+H:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.pdb
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.exe
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.pdb
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\bin\Debug\CidadeInteligente.exe
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\bin\Debug\CidadeInteligente.pdb
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.csprojResolveAssemblyReference.cache
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.FormPrincipal.resources
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.formCliente.resources
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.formFuncionario.resources
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.formPessoa.resources
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.formPessoaDocumentos.resources
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.Properties.Resources.resources
+E:\Não retirar\PortableGit\Cidade-Inteligente\CidadeInteligente\CidadeInteligente\obj\x86\Debug\CidadeInteligente.csproj.GenerateResource.Cache

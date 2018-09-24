@@ -20,15 +20,15 @@ namespace CidadeInteligente
             InitializeComponent();
         }
 
-        private void retornarPessoas()
+        private void retornarDocumentoPessoa()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = "Password=123;Integrated Security=SSPI;User ID=sa123;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source=DESKTOP-GAMER";
+            conexao.ConnectionString = "Password=;Integrated Security=SSPI;User ID=;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source="; 
             conexao.Open();
 
-            string comandoSQL = "SELECT idPessoaDocumento as 'ID dos documentos pessoais', idPessoa as 'ID da pessoa', nrRg as 'RG', nrCpf as 'CPF', nrReservista 'Reservista', nrCarteiraTrabalho 'CTPS', nrCnh 'CNH' FROM tb_pessoaDocumento";
+            SqlCommand sqlCommand = new SqlCommand("sp_retornarDocumentoPessoa", conexao);
 
-            SqlCommand sqlCommand = new SqlCommand(comandoSQL, conexao);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
             SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable();
@@ -45,7 +45,7 @@ namespace CidadeInteligente
         {
             //conexão com banco
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = "Password=123;Integrated Security=SSPI;User ID=sa123;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source=DESKTOP-GAMER";
+            conexao.ConnectionString = "Password=;Integrated Security=SSPI;User ID=;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source=";
 
             //abrir conexão
             conexao.Open();
@@ -55,15 +55,27 @@ namespace CidadeInteligente
             if (id != null)//caso o valor da variavel id não seja nulo, a operação sera o update
             //o valor de id deixará de ser nulo quando o usuário clicar na tabela com a intenção de fazer uma alteração nos dados
             {
-                stringSQl = string.Concat("update tb_pessoaDocumento set idPessoa = '", idPessoa, "', nrRg =  '", nrRg, "', nrCpf = '", nrCpf, "', nrReservista = '", nrReservista, "', nrCarteiraTrabalho = '", nrCarteiraTrabalho, "', nrCnh = '", nrCnh, "' where idPessoaDocumento = ", id);
+                stringSQl = "sp_atualizarDocumentoPessoa";
             }
             else
             {
-                stringSQl = string.Concat("insert into tb_pessoaDocumento values ('", idPessoa, "', '", nrRg, "', '", nrCpf, "', '", nrReservista, "', '", nrCarteiraTrabalho, "', '", nrCnh, "')");
+                stringSQl = "sp_inserirDocumentoPessoa";
             }
 
             //insere texto de insert em nova consulta
             SqlCommand comandaSQL = new SqlCommand(stringSQl, conexao);
+            comandaSQL.CommandType = CommandType.StoredProcedure;
+
+            if (id != null)
+            {
+                comandaSQL.Parameters.AddWithValue("@idPessoaDocumento", id);
+            }
+            comandaSQL.Parameters.AddWithValue("@idPessoa", idPessoa);
+            comandaSQL.Parameters.AddWithValue("@nrRg", nrRg);
+            comandaSQL.Parameters.AddWithValue("@nrCpf", nrCpf);
+            comandaSQL.Parameters.AddWithValue("@nrReservista", nrReservista);
+            comandaSQL.Parameters.AddWithValue("@nrCarteiraTrabalho", nrCarteiraTrabalho);
+            comandaSQL.Parameters.AddWithValue("@nrCnh", nrCnh);
 
             //Tecla F5
             comandaSQL.ExecuteNonQuery();
@@ -87,13 +99,13 @@ namespace CidadeInteligente
         {
             CadastrarDocumentos(txbId.Text, txbRg.Text, txbCpf.Text, txbReservista.Text, txbCtps.Text, txbCnh.Text);
             LimparCampos();
-            retornarPessoas();
+            retornarDocumentoPessoa();
             MessageBox.Show("Operação efetuada com sucesso", "Cidade Inteligente");
         }
 
         private void formPessoaDocumentos_Load(object sender, EventArgs e)
         {
-            retornarPessoas();
+            retornarDocumentoPessoa();
         }
 
         private void dgvPessoasDoc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

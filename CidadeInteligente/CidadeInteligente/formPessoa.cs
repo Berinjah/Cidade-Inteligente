@@ -21,12 +21,12 @@ namespace CidadeInteligente
         private void retornarPessoas()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = "Password=123;Integrated Security=SSPI;User ID=sa123;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source=DESKTOP-GAMER";
+            conexao.ConnectionString = "Password=;Integrated Security=SSPI;User ID=;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source="; 
             conexao.Open();
 
-            string comandoSQL = "SELECT idPessoa as 'ID da pessoa', nmPessoa as 'Nome completo', dsEndereco as 'Endereço', dsEstadoCivil as 'Estado Civil', dtNascimento 'Data de nascimento' FROM tb_pessoa";
+            SqlCommand sqlCommand = new SqlCommand("sp_retornarPessoas", conexao);
 
-            SqlCommand sqlCommand = new SqlCommand(comandoSQL, conexao);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
             SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable();
@@ -39,11 +39,11 @@ namespace CidadeInteligente
 
         }
 
-        private void CadastrarPessoa(string nmCliente, string dsEndereco, string dsEstadoCivil, string dsDataNascimento)
+        private void CadastrarPessoa(string nmPessoa, string dsEndereco, string dsEstadoCivil, string dtNascimento)
         {
             //conexão com banco
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = "Password=123;Integrated Security=SSPI;User ID=sa123;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source=DESKTOP-GAMER";
+            conexao.ConnectionString = "Password=;Integrated Security=SSPI;User ID=;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source=";
 
             //abrir conexão
             conexao.Open();
@@ -53,15 +53,25 @@ namespace CidadeInteligente
             if (id != null)//caso o valor da variavel id não seja nulo, a operação sera o update
                             //o valor de id deixará de ser nulo quando o usuário clicar na tabela com a intenção de fazer uma alteração nos dados
             {
-                stringSQl = string.Concat("update tb_pessoa set nmPessoa ='", nmCliente, "', dsEndereco = '", dsEndereco, "', dsEstadoCivil = '", dsEstadoCivil, "', dtNascimento = '", dsDataNascimento, "' where idPessoa = ", id);
+                stringSQl = "sp_atualizarPessoa";
             }
             else
             {
-                stringSQl = string.Concat("insert into tb_pessoa values ('", nmCliente, "', '", dsEndereco, "', '", dsEstadoCivil, "', '", dsDataNascimento, "')");
+                stringSQl = "sp_inserirPessoa";
             }
 
             //insere texto de insert em nova consulta
             SqlCommand comandaSQL = new SqlCommand(stringSQl, conexao);
+            comandaSQL.CommandType = CommandType.StoredProcedure;
+
+            if (id != null)
+            {
+                comandaSQL.Parameters.AddWithValue("@idPessoa", id);
+            }
+            comandaSQL.Parameters.AddWithValue("@nmPessoa", nmPessoa);
+            comandaSQL.Parameters.AddWithValue("@dsEndereco", dsEndereco);
+            comandaSQL.Parameters.AddWithValue("@dsEstadoCivil", dsEstadoCivil);
+            comandaSQL.Parameters.AddWithValue("@dtNascimento", dtNascimento);
 
             //Tecla F5
             comandaSQL.ExecuteNonQuery();
