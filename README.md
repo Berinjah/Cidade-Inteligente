@@ -1,1 +1,1 @@
-"Reposit¢rio de desenvolvimento do projeto Cidade Inteligente" 
+Reposit√≥rio de desenvolvimento do projeto Cidade Inteligente
