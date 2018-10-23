@@ -205,39 +205,13 @@
             // 
             // cbxUf
             // 
+            this.cbxUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.cbxUf.FormattingEnabled = true;
-            this.cbxUf.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AP",
-            "AM",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MT",
-            "MS",
-            "MG",
-            "PA",
-            "PB",
-            "PR",
-            "PE",
-            "PI",
-            "RR",
-            "RO",
-            "RJ",
-            "RN",
-            "RS",
-            "SC",
-            "SP",
-            "SE",
-            "TO"});
             this.cbxUf.Location = new System.Drawing.Point(446, 63);
             this.cbxUf.Name = "cbxUf";
-            this.cbxUf.Size = new System.Drawing.Size(92, 21);
+            this.cbxUf.Size = new System.Drawing.Size(92, 25);
             this.cbxUf.TabIndex = 14;
+            this.cbxUf.SelectedIndexChanged += new System.EventHandler(this.cbxUf_SelectedIndexChanged);
             // 
             // lblUf
             // 
@@ -251,9 +225,10 @@
             // 
             // listView1
             // 
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.listView1.Location = new System.Drawing.Point(446, 101);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(150, 87);
+            this.listView1.Size = new System.Drawing.Size(317, 87);
             this.listView1.TabIndex = 16;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -271,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 420);
+            this.ClientSize = new System.Drawing.Size(775, 420);
             this.Controls.Add(this.lblCidade);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.lblUf);

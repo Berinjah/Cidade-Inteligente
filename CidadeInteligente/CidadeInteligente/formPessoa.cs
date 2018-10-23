@@ -94,12 +94,15 @@ namespace CidadeInteligente
             CadastrarPessoa(txbNome.Text, txbEndereco.Text, cbxEstadoCivil.Text, System.DateTime.Parse(dtpNascimento.Text).ToString("yyyy-MM-dd"));
             LimparCampos();
             retornarPessoas();
+           
             MessageBox.Show("Operação efetuada com sucesso", "Cidade Inteligente");
         }
 
         private void formPessoa_Load(object sender, EventArgs e)
         {
             retornarPessoas();
+            retornarUf();
+            
         }
 
         private void dgvPessoas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -115,6 +118,63 @@ namespace CidadeInteligente
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
+        }
+
+        private void retornarUf()
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = "Password=;Integrated Security=SSPI;User ID=;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source=";
+            conexao.Open();
+
+            SqlCommand sqlCommand = new SqlCommand("sp_retornarUf", conexao);
+
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+            cbxUf.DataSource = dt;
+
+            cbxUf.DisplayMember = "district";
+
+            cbxUf.ValueMember = "district";
+
+            conexao.Close();
+        }
+        
+        private void retornarCidade(string uf)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = "Password=;Integrated Security=SSPI;User ID=;Persist Security Info=False;Initial Catalog=CidadeInteligente;Data Source=";
+            conexao.Open();
+
+            SqlCommand sqlCommand = new SqlCommand("sp_retornarCidades", conexao);
+
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            sqlCommand.Parameters.AddWithValue("@district", uf);
+
+            SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+            listView1.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                listView1.Items.Add(dr[0].ToString());
+            }
+
+            conexao.Close();
+        }
+
+        private void cbxUf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            retornarCidade(cbxUf.Text);
+           
         }
     }
 }
