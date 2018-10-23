@@ -39,6 +39,13 @@
             this.btnEnviar = new System.Windows.Forms.Button();
             this.dgvPessoas = new System.Windows.Forms.DataGridView();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.rbtnM = new System.Windows.Forms.RadioButton();
+            this.rbtnF = new System.Windows.Forms.RadioButton();
+            this.lblSexo = new System.Windows.Forms.Label();
+            this.cbxUf = new System.Windows.Forms.ComboBox();
+            this.lblUf = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.lblCidade = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,9 +53,10 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(12, 37);
+            this.lblNome.Location = new System.Drawing.Point(33, 31);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(53, 20);
+            this.lblNome.Size = new System.Drawing.Size(45, 17);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome";
             // 
@@ -56,9 +64,10 @@
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndereco.Location = new System.Drawing.Point(12, 82);
+            this.lblEndereco.Location = new System.Drawing.Point(9, 67);
+            this.lblEndereco.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(80, 20);
+            this.lblEndereco.Size = new System.Drawing.Size(69, 17);
             this.lblEndereco.TabIndex = 1;
             this.lblEndereco.Text = "Endereço";
             // 
@@ -66,9 +75,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(423, 37);
+            this.label3.Location = new System.Drawing.Point(348, 31);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 20);
+            this.label3.Size = new System.Drawing.Size(81, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Estado Civil";
             // 
@@ -76,9 +86,10 @@
             // 
             this.lblDataNascimento.AutoSize = true;
             this.lblDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataNascimento.Location = new System.Drawing.Point(423, 82);
+            this.lblDataNascimento.Location = new System.Drawing.Point(9, 105);
+            this.lblDataNascimento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDataNascimento.Name = "lblDataNascimento";
-            this.lblDataNascimento.Size = new System.Drawing.Size(159, 20);
+            this.lblDataNascimento.Size = new System.Drawing.Size(134, 17);
             this.lblDataNascimento.TabIndex = 3;
             this.lblDataNascimento.Text = "Data de nascimento";
             // 
@@ -90,10 +101,10 @@
             "Solteiro(a)",
             "Casado(a)",
             "Viúvo(a)"});
-            this.cbxEstadoCivil.Location = new System.Drawing.Point(612, 34);
-            this.cbxEstadoCivil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxEstadoCivil.Location = new System.Drawing.Point(446, 28);
+            this.cbxEstadoCivil.Margin = new System.Windows.Forms.Padding(2);
             this.cbxEstadoCivil.Name = "cbxEstadoCivil";
-            this.cbxEstadoCivil.Size = new System.Drawing.Size(121, 28);
+            this.cbxEstadoCivil.Size = new System.Drawing.Size(92, 25);
             this.cbxEstadoCivil.TabIndex = 4;
             // 
             // dtpNascimento
@@ -101,37 +112,37 @@
             this.dtpNascimento.CustomFormat = "";
             this.dtpNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(612, 78);
-            this.dtpNascimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpNascimento.Location = new System.Drawing.Point(151, 101);
+            this.dtpNascimento.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(121, 27);
+            this.dtpNascimento.Size = new System.Drawing.Size(92, 23);
             this.dtpNascimento.TabIndex = 5;
             // 
             // txbNome
             // 
             this.txbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNome.Location = new System.Drawing.Point(115, 34);
-            this.txbNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbNome.Location = new System.Drawing.Point(86, 28);
+            this.txbNome.Margin = new System.Windows.Forms.Padding(2);
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(267, 27);
+            this.txbNome.Size = new System.Drawing.Size(201, 23);
             this.txbNome.TabIndex = 6;
             // 
             // txbEndereco
             // 
             this.txbEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEndereco.Location = new System.Drawing.Point(115, 80);
-            this.txbEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbEndereco.Location = new System.Drawing.Point(86, 65);
+            this.txbEndereco.Margin = new System.Windows.Forms.Padding(2);
             this.txbEndereco.Name = "txbEndereco";
-            this.txbEndereco.Size = new System.Drawing.Size(267, 27);
+            this.txbEndereco.Size = new System.Drawing.Size(201, 23);
             this.txbEndereco.TabIndex = 7;
             // 
             // btnEnviar
             // 
             this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.Location = new System.Drawing.Point(284, 137);
-            this.btnEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEnviar.Location = new System.Drawing.Point(212, 197);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(84, 35);
+            this.btnEnviar.Size = new System.Drawing.Size(63, 28);
             this.btnEnviar.TabIndex = 8;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
@@ -140,30 +151,134 @@
             // dgvPessoas
             // 
             this.dgvPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPessoas.Location = new System.Drawing.Point(51, 194);
-            this.dgvPessoas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPessoas.Location = new System.Drawing.Point(37, 248);
             this.dgvPessoas.Name = "dgvPessoas";
-            this.dgvPessoas.Size = new System.Drawing.Size(685, 197);
+            this.dgvPessoas.Size = new System.Drawing.Size(514, 160);
             this.dgvPessoas.TabIndex = 9;
             this.dgvPessoas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPessoas_CellDoubleClick);
             // 
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(415, 137);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpar.Location = new System.Drawing.Point(310, 197);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(85, 35);
+            this.btnLimpar.Size = new System.Drawing.Size(64, 28);
             this.btnLimpar.TabIndex = 10;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // rbtnM
+            // 
+            this.rbtnM.AutoSize = true;
+            this.rbtnM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnM.Location = new System.Drawing.Point(86, 138);
+            this.rbtnM.Name = "rbtnM";
+            this.rbtnM.Size = new System.Drawing.Size(87, 20);
+            this.rbtnM.TabIndex = 11;
+            this.rbtnM.TabStop = true;
+            this.rbtnM.Text = "Masculino";
+            this.rbtnM.UseVisualStyleBackColor = true;
+            // 
+            // rbtnF
+            // 
+            this.rbtnF.AutoSize = true;
+            this.rbtnF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.rbtnF.Location = new System.Drawing.Point(179, 136);
+            this.rbtnF.Name = "rbtnF";
+            this.rbtnF.Size = new System.Drawing.Size(83, 21);
+            this.rbtnF.TabIndex = 12;
+            this.rbtnF.TabStop = true;
+            this.rbtnF.Text = "Feminino";
+            this.rbtnF.UseVisualStyleBackColor = true;
+            // 
+            // lblSexo
+            // 
+            this.lblSexo.AutoSize = true;
+            this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblSexo.Location = new System.Drawing.Point(39, 138);
+            this.lblSexo.Name = "lblSexo";
+            this.lblSexo.Size = new System.Drawing.Size(39, 17);
+            this.lblSexo.TabIndex = 13;
+            this.lblSexo.Text = "Sexo";
+            // 
+            // cbxUf
+            // 
+            this.cbxUf.FormattingEnabled = true;
+            this.cbxUf.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RR",
+            "RO",
+            "RJ",
+            "RN",
+            "RS",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.cbxUf.Location = new System.Drawing.Point(446, 63);
+            this.cbxUf.Name = "cbxUf";
+            this.cbxUf.Size = new System.Drawing.Size(92, 21);
+            this.cbxUf.TabIndex = 14;
+            // 
+            // lblUf
+            // 
+            this.lblUf.AutoSize = true;
+            this.lblUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblUf.Location = new System.Drawing.Point(403, 63);
+            this.lblUf.Name = "lblUf";
+            this.lblUf.Size = new System.Drawing.Size(26, 17);
+            this.lblUf.TabIndex = 15;
+            this.lblUf.Text = "UF";
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(446, 101);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(150, 87);
+            this.listView1.TabIndex = 16;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // lblCidade
+            // 
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblCidade.Location = new System.Drawing.Point(377, 107);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(52, 17);
+            this.lblCidade.TabIndex = 17;
+            this.lblCidade.Text = "Cidade";
+            // 
             // formPessoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 431);
+            this.ClientSize = new System.Drawing.Size(636, 420);
+            this.Controls.Add(this.lblCidade);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lblUf);
+            this.Controls.Add(this.cbxUf);
+            this.Controls.Add(this.lblSexo);
+            this.Controls.Add(this.rbtnF);
+            this.Controls.Add(this.rbtnM);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.dgvPessoas);
             this.Controls.Add(this.btnEnviar);
@@ -175,7 +290,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.lblNome);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formPessoa";
             this.Text = "Cadastro de Pessoa";
             this.Load += new System.EventHandler(this.formPessoa_Load);
@@ -198,5 +313,12 @@
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.DataGridView dgvPessoas;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.RadioButton rbtnM;
+        private System.Windows.Forms.RadioButton rbtnF;
+        private System.Windows.Forms.Label lblSexo;
+        private System.Windows.Forms.ComboBox cbxUf;
+        private System.Windows.Forms.Label lblUf;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label lblCidade;
     }
 }
